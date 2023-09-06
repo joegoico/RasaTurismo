@@ -1,0 +1,23 @@
+version: "3.1"
+
+stories:
+
+- story: need help
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: action_save_name
+  - action: utter_confirm_name 
+
+- story: say_name
+  steps:
+    - intent: say_name
+    - action: action_save_name
+    - action: utter_confirm_name
+
+- story: need_help
+  steps:
+  - intent: help_with
+  - action: action_save_consulta
+  - action: utter_help_with

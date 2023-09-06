@@ -1,0 +1,6 @@
+[
+  {
+    "name": "consulta",
+    "pattern": "(\\bhospedaje\\b|\\btraslado\\b|\\bprecio\\b|\\bpaquete\\b|\\bfecha\\b|\\bsorpresas\\b|\\breserva\\b|\\bcompra\\b|\\bdestino\\b)"
+  }
+]

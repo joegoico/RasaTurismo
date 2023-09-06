@@ -1,0 +1,59 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - say_name
+  - help_with
+  - bot_challenge
+entities:
+  - nombre
+  - consulta
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nombre
+      component: SpaCyEntityExtractor
+  doubt:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: consulta
+      component: SpaCyEntityExtractor
+
+actions:
+  - action_save_name
+  - action_save_consulta
+
+responses:
+  utter_greet:
+  - text: "Hola! Como es tu nombre?"
+
+  utter_confirm_name:
+    - text: "¡Gracias, {name}!. Contame, ¿en que puedo ayudarte?"
+
+  utter_help_with:
+    - text: "Perfecto {name}, contame cual es tu duda acerca de {doubt}"
+
+  utter_cheer_up:
+  - text: "Aca tengo algo que puede alegrarte:"
+    image: "https://acortar.link/CQuDRg"
+
+  utter_did_that_help:
+  - text: "Te sirvió mi respuesta?"
+
+  utter_goodbye:
+  - text: "chau {name}, gracias por tu visita!"
+
+  utter_iamabot:
+  - text: "soy un agente virtual cuya misión es asesorarte en tu viaje."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

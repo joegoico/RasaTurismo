@@ -1,0 +1,98 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - holaa
+    - holis
+    - Buenas tardes
+    - buenas
+    - Que onda
+    - Como va
+    - Necesito ayuda
+    - Tengo una pregunta
+    - Tengo una duda
+
+- intent: say_name
+  examples: |
+    - me llamo [juan](nombre)
+    - soy [ana](nombre)
+    - [jose](nombre)
+
+
+- intent: goodbye
+  examples: |
+    - Genial
+    - Genial, gracias
+    - Gracias
+    - Muchas gracias
+
+- intent: affirm
+  examples: |
+    - Si
+    - Claro
+    - Así es
+    - Exactamente
+    - Es correcto
+    - Esta bien
+
+- intent: deny
+  examples: |
+    - no
+    - Está mal
+    - Es incorrecto
+    - No me convence
+    - No lo creo
+    - Lo dudo
+
+- intent: help_with
+  examples: |
+    - Necesito ayuda con [el destino](consulta)
+    - [el destino](consulta)
+    - [el hospedaje](consulta)
+    - [el traslado](consulta)
+    - [el precio](consulta)
+    - [el paquete](consulta)
+    - [la fecha](consulta)
+    - Necesito ayuda con [el hospedaje](consulta)
+    - Necesito ayuda con [el traslado](consulta)
+    - Necesito ayuda con [el precio](consulta)
+    - Necesito ayuda con [el paquete](consulta)
+    - Necesito ayuda con [la fecha](consulta)
+    - Necesito ayuda con [las sorpresas](consulta)
+    - Necesito ayuda con [la reserva](consulta)
+    - Quiero cancelar mi [compra](consulta)
+    - Quiero cancelar mi [reserva](consulta)
+    - [Las sorpresas](consulta)
+  
+- lookup: consulta
+  examples: |
+    - el hospedaje
+    - el traslado
+    - el precio
+    - el paquete
+    - la fecha
+    - las sorpresas
+    - la reserva
+    - la compra
+    - el destino
+                          
+
+- intent: goodbye
+  examples: |
+    - nos vemos
+    - gracaias
+    - muchas gracias
+    - te agradezco
+    - hasta luego
+    - chau
+    - le agradezco
+  
+- intent: bot_challenge
+  examples: |
+    - Sos un robot?
+    - Sos un humano?
+    - Con quien estoy hablando?
+    - Que sos?
+    - Quien sos?

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "consulta",
+    "pattern": "(hospedaje|traslado|precio|paquete|fecha|sorpresas|reserva|compra|destino)"
+  }
+]
