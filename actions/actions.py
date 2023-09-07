@@ -59,3 +59,39 @@ class ActionSaveConsulta(Action):
     
         return [SlotSet("doubt", consulta)]
 
+class ActionMoreInfo(Action):
+
+    def name(self) -> Text:
+        return "action_more_info"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        info = next(tracker.get_latest_entity_values("det"),None)
+        foto =next(tracker.get_latest_entity_values("fot"),None)
+
+        if foto is None and info is not None:
+            dispatcher.utter_template("utter_more_info", tracker=tracker)
+        elif foto is not None and info is None:
+            dispatcher.utter_template("utter_need_photo", tracker=tracker)
+        # Define una ranura (slot) para rastrear la respuesta del usuario
+        return []
+
+class ActionSendLink(Action):
+
+    def name(self) -> Text:
+        return "action_send_link"
+
+    async def run(self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            
+        # Define el enlace que deseas enviar como respuesta
+        enlace = "https://www.ejemplo.com"
+
+        # Crea el mensaje que contiene el enlace
+        message = f"¡Aquí tienes un enlace interesante: [{enlace}]({enlace})"
+
+        # Envía el mensaje con el enlace
+        dispatcher.utter_message(text=message)
+
+        return []
+        

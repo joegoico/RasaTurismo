@@ -36,6 +36,13 @@ nlu:
     - Exactamente
     - Es correcto
     - Esta bien
+    - ok
+    - dale
+    - me gustaria
+    - por favor
+    - plis
+    - please
+    
 
 - intent: deny
   examples: |
@@ -77,6 +84,29 @@ nlu:
     - la reserva
     - la compra
     - el destino
+
+- intent: hospedaje
+  examples: |
+    - mas [detalles](det)
+    - quiero mas [detalles](det)
+    - quiero mas [detalles](det) de mi hospedaje
+    - quiero mas [detalles](det) del hotel
+    - quiero saber mas sobre(det) mi hospedaje
+    - como es el hotel?
+    - quiero ver [fotos](fot) del hospedaje
+    - dame mas [info](det)
+    - quiero mas [info](det)
+    - quiero mas [informacion](det)
+
+- intent: hospedaje_change
+  examples: |
+    - quiero cambiar mi hospedaje
+    - quiero ir a otro hotel
+    - no me gusta mi hospedaje
+    - me gustaria cambiar mi hospedaje
+    - no quiero ir al hotel que me asignaron
+    - quiero otro hotel
+    - quiero otro hospedaje
                           
 
 - intent: goodbye

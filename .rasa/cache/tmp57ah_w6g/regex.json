@@ -1,0 +1,6 @@
+[
+  {
+    "name": "consulta",
+    "pattern": "(\\bel\\ hospedaje\\b|\\bel\\ traslado\\b|\\bel\\ precio\\b|\\bel\\ paquete\\b|\\bla\\ fecha\\b|\\blas\\ sorpresas\\b|\\bla\\ reserva\\b|\\bla\\ compra\\b|\\bel\\ destino\\b)"
+  }
+]
