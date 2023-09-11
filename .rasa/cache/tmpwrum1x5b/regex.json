@@ -1,0 +1,10 @@
+[
+  {
+    "name": "nombre",
+    "pattern": "(\\bJuan\\b|\\bPedro\\b|\\bCarlos\\b|\\bAntonio\\b|\\bLuis\\b|\\bJosé\\b|\\bManuel\\b|\\bFrancisco\\b|\\bDavid\\b|\\bJosé\\ Luis\\b|\\bJavier\\b|\\bDaniel\\b|\\bMiguel\\b|\\bRafael\\b|\\bJuan\\ Carlos\\b|\\bJosé\\ Manuel\\b|\\bFernando\\b|\\bPablo\\b|\\bSergio\\b|\\bJorge\\b|\\bÁngel\\b|\\bAlberto\\b|\\bAlejandro\\b|\\bRamón\\b|\\bRaúl\\b|\\bTomás\\b|\\bDiego\\b|\\bGuillermo\\b|\\bAndrés\\b|\\bSimón\\b|\\bLucas\\b|\\bRoberto\\b|\\bEmilio\\b|\\bGabriel\\b|\\bMario\\b|\\bAdolfo\\b|\\bVictor\\b|\\bJoaquín\\b|\\bFelipe\\b|\\bBenjamín\\b|\\bCésar\\b|\\bEduardo\\b|\\bJulio\\b|\\bEsteban\\b|\\bHugo\\b|\\bIsrael\\b|\\bMaría\\b|\\bAna\\b|\\bLaura\\b|\\bCarmen\\b|\\bPatricia\\b|\\bIsabel\\b|\\bSusana\\b|\\bElena\\b|\\bRosa\\b|\\bClaudia\\b|\\bMercedes\\b|\\bSilvia\\b|\\bMarta\\b|\\bAndrea\\b|\\bPaula\\b|\\bRaquel\\b|\\bNatalia\\b|\\bLidia\\b|\\bSonia\\b|\\bSara\\b|\\bLourdes\\b|\\bGabriela\\b|\\bAurora\\b|\\bAdriana\\b|\\bSofía\\b|\\bBeatriz\\b|\\bLucía\\b|\\bCarla\\b|\\bLorena\\b|\\bGloria\\b|\\bCecilia\\b|\\bÁngela\\b|\\bEsther\\b|\\bBelén\\b|\\bOlga\\b|\\bAlicia\\b|\\bEmma\\b|\\bVictoria\\b|\\bTeresa\\b|\\bDolores\\b|\\bElena\\ María\\b|\\bIsabel\\ María\\b|\\bMaría\\ José\\b|\\bMaría\\ Carmen\\b|\\bMaría\\ Luisa\\b|\\bMaría\\ Dolores\\b|\\bMaría\\ Teresa\\b|\\bMaría\\ Pilar\\b|\\bMaría\\ Isabel\\b|\\bMaría\\ Rosa\\b)"
+  },
+  {
+    "name": "consulta",
+    "pattern": "(\\bel\\ hospedaje\\b|\\bel\\ traslado\\b|\\bel\\ precio\\b|\\bel\\ paquete\\b|\\bla\\ fecha\\b|\\blas\\ sorpresas\\b|\\bla\\ reserva\\b|\\bla\\ compra\\b|\\bel\\ destino\\b|\\bhospedaje\\b|\\bdestino\\b|\\btraslado\\b|\\bprecio\\b|\\bpaquete\\b|\\bfecha\\b|\\bsorpresas\\b|\\breserva\\b|\\bcompra\\b)"
+  }
+]

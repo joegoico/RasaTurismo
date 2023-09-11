@@ -1,0 +1,9 @@
+consulta(hospedaje).
+consulta(traslado).
+consulta(precio).
+consulta(fecha).
+consulta(paquete).
+consulta(destino).
+consulta(reserva).
+consulta(sorpresas).
+consulta(compra).

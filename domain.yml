@@ -24,7 +24,17 @@ slots:
       entity: nombre
       component: SpaCyEntityExtractor
   doubt:
-    type: text
+    type: categorical
+    values:
+      - hospedaje
+      - destino
+      - traslado
+      - precio
+      - paquete
+      - fecha
+      - sorpresas
+      - reserva
+      - compra
     influence_conversation: true
     mappings:
     - type: from_entity
@@ -62,6 +72,8 @@ actions:
   - action_save_consulta
   - action_more_info
   - action_send_link
+  - action_show_photo
+  - action_provide_help
 
 responses:
   utter_greet:
@@ -76,6 +88,11 @@ responses:
     - text: "Perfecto {name}, contame cual es tu duda acerca de {doubt}"
     - text: "Bien {name}, me dijiste que necesitas ayuda con {doubt}. Contame con mas detalle que necesitas."
 
+  utter_need_assistance:
+    - text: "¿Necesitas ayuda con algo mas?"
+    - text: "¿Te puedo ayudar con algo mas?"
+    - text: "¿Necesitas informacion acerca de algun otro tema?"
+  
   utter_hospedaje:
     - text: "Dale, aca te dejo mas informacion acerca de tu lugar de hospedaje"
     - text: "Acá tenes un poco mas de informacion sobre tu hospedaje"
@@ -83,6 +100,27 @@ responses:
   utter_hospedaje_change:
     - text: "Bueno, vamos a ver que podemos hacer. Podés darme mas detalles del motivo del cambio?"
     - text: "Dale, veamos que podemos conseguir. Para hacer un buen cambio me gustaría que me des mas detalles acerca del motivo por el cual queres cambiar el hospedaje"
+  
+  utter_destino:
+    - text: "Te dejo el link de la pagina oficial de tu destino para que puedas ver todo lo que necesites https://tandil.tur.ar"
+    - text: "Dale, te paso el link del sitio oficial de tu destino para que veas en detalle que ofrece: https://tandil.tur.ar"
+
+  utter_traslado:
+    - text: "el traslado que te reservamos es mediante colectivo, la empresa es el rapido. ¿estas conforme con esta elección?"
+    - text: "el traslado que te reservamos es mediante avión, la empresa es Aerolineas Argentina. ¿estas conforme con esta elección?"
+  
+  utter_precio:
+    - text: "te paso en detalle como se compone el precio final:"
+    - text: "el precio final de tu paquete esta compuesto de la siguiente manera:"
+
+  utter_sorpresas:
+    - text: "Dale, te cuento un poco acerca de las sorpresas. /n Las sorpresas"
+
+  utter_fecha:
+    - text: "salis mañana 20:00hs"
+
+  utter_reserva:
+    - text: "Estos son los detalles de tu reserva:"
   
   utter_did_that_help:
   - text: "Te sirvió mi respuesta?"

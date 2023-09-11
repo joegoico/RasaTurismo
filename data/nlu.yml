@@ -67,6 +67,8 @@ nlu:
     - Esteban
     - Hugo
     - Israel
+    - Martin
+    - martina
     - María
     - Ana
     - Laura
@@ -153,35 +155,35 @@ nlu:
 
 - intent: help_with
   examples: |
-    - Necesito ayuda con [el destino](consulta)
-    - [el destino](consulta)
-    - [el hospedaje](consulta)
-    - [el traslado](consulta)
-    - [el precio](consulta)
-    - [el paquete](consulta)
-    - [la fecha](consulta)
-    - Necesito ayuda con [el hospedaje](consulta)
-    - Necesito ayuda con [el traslado](consulta)
-    - Necesito ayuda con [el precio](consulta)
-    - Necesito ayuda con [el paquete](consulta)
-    - Necesito ayuda con [la fecha](consulta)
-    - Necesito ayuda con [las sorpresas](consulta)
-    - Necesito ayuda con [la reserva](consulta)
+    - Necesito ayuda con el [destino](consulta)
+    - el [destino](consulta)
+    - el [hospedaje](consulta)
+    - el [traslado](consulta)
+    - el [precio](consulta)
+    - el [paquete](consulta)
+    - la [fecha](consulta)
+    - Necesito ayuda con el [hospedaje](consulta)
+    - Necesito ayuda con el [traslado](consulta)
+    - Necesito ayuda con el [precio](consulta)
+    - Necesito ayuda con el [paquete](consulta)
+    - Necesito ayuda con la [fecha](consulta)
+    - Necesito ayuda con las [sorpresas](consulta)
+    - Necesito ayuda con la [reserva](consulta)
     - Quiero cancelar mi [compra](consulta)
     - Quiero cancelar mi [reserva](consulta)
-    - [Las sorpresas](consulta)
+    - [sorpresas](consulta)
   
 - lookup: consulta
   examples: |
-    - el hospedaje
-    - el traslado
-    - el precio
-    - el paquete
-    - la fecha
-    - las sorpresas
-    - la reserva
-    - la compra
-    - el destino
+    - hospedaje
+    - destino
+    - traslado
+    - precio
+    - paquete
+    - fecha
+    - sorpresas
+    - reserva
+    - compra
 
 - intent: hospedaje
   examples: |

@@ -22,14 +22,14 @@ stories:
   - action: action_save_consulta
   - action: utter_help_with
 
-- story: doubt_hospedaje
+- story: Preguntar si el usuario necesita más ayuda
   steps:
-  - intent: hospedaje
-  - action: utter_hospedaje
-  - action: action_more_info
-  - intent: affirm
-  - action: action_send_link
-  - action: utter_did_that_help
+  - intent: help_with  # Espera que el usuario pida ayuda
+  - action: action_provide_help   # Pregunta si el usuario necesita más ayuda
+  - intent: deny  # Espera una respuesta negativa del usuario
+  - action: utter_goodbye  # Si el usuario no necesita más ayuda, se despide
+  
+
 
 - story: change_hospedaje
   steps:

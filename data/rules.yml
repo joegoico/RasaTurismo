@@ -13,6 +13,16 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: pregunta por ayuda hasta que el usuario diga que no necesita mas ayuda
+  condition:
+    - active_loop: null
+  steps:
+  - action: utter_need_assistance
+  - intent: affirm  # Espera una respuesta afirmativa del usuario
+  - action: action_provide_help
+  - action: utter_need_assistance
+
+
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:

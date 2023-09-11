@@ -1,17 +1,10 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
+import os
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+from swiplserver import PrologMQI
 
 
 class ActionHelloWorld(Action):
@@ -58,7 +51,25 @@ class ActionSaveConsulta(Action):
         dispatcher.utter_message(text = message)
     
         return [SlotSet("doubt", consulta)]
+class ActionShowPhotos(Action):
 
+    def name(self) -> Text:
+        return "action_show_photo"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        folder_path = "C:\\Users\\jmgoi\\OneDrive\\Documentos\\Facultad\\porg exploratoria\\fotos hotel"
+
+        photo_files = [f for f in os.listdir(folder_path) if f.endswith((".jpg", ".png", ".jpeg"))]
+
+        # Envía cada foto como respuesta
+        for photo_file in photo_files:
+            photo_path = os.path.join(folder_path, photo_file)
+            dispatcher.utter_message(image=photo_path)
+
+        # Define una ranura (slot) para rastrear la respuesta del usuario
+        return []
 class ActionMoreInfo(Action):
 
     def name(self) -> Text:
@@ -73,8 +84,40 @@ class ActionMoreInfo(Action):
         if foto is None and info is not None:
             dispatcher.utter_template("utter_more_info", tracker=tracker)
         elif foto is not None and info is None:
-            dispatcher.utter_template("utter_need_photo", tracker=tracker)
+            dispatcher.utter_action_trigger("action_show_photo")
         # Define una ranura (slot) para rastrear la respuesta del usuario
+        return []
+
+class ActionProvideInfo(Action):
+
+    def name(self) -> Text:
+        return "action_provide_help"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        doubt_value = tracker.get_slot("doubt")
+
+        # Define las respuestas basadas en el valor de 'doubt' según domain.yml
+        response_messages = {
+            "hospedaje": "utter_hospedaje",
+            "destino": "utter_destino",
+            "traslado": "utter_traslado",
+            "precio": "utter_precio",
+            "paquete": "utter_paquete",
+            "fecha": "utter_fecha",
+            "sorpresas": "utter_sorpresas",
+            "reserva": "utter_reserva",
+            "compra": "utter_compra"
+        }
+
+        # Verifica si el valor de 'doubt' tiene una respuesta asociada
+        if doubt_value in response_messages:
+            # Utiliza dispatcher para enviar la respuesta basada en 'doubt'
+            dispatcher.utter_template(response_messages[doubt_value], tracker)
+        else:
+            dispatcher.utter_message(text="No estoy seguro de cómo puedo ayudarte en este momento.")
+
         return []
 
 class ActionSendLink(Action):
