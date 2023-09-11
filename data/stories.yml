@@ -10,28 +10,28 @@ stories:
   - action: action_save_name
   - action: utter_confirm_name 
 
-- story: say_name
-  steps:
-    - intent: say_name
-    - action: action_save_name
-    - action: utter_confirm_name
-
-- story: need_help
-  steps:
-  - intent: help_with
-  - action: action_save_consulta
-  - action: utter_help_with
-
-- story: Preguntar si el usuario necesita más ayuda
-  steps:
-  - intent: help_with  # Espera que el usuario pida ayuda
-  - action: action_provide_help   # Pregunta si el usuario necesita más ayuda
-  - intent: deny  # Espera una respuesta negativa del usuario
-  - action: utter_goodbye  # Si el usuario no necesita más ayuda, se despide
-  
-
-
 - story: change_hospedaje
   steps:
   - intent: hospedaje_change
   - action: utter_hospedaje_change
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: action_save_name
+  - action: utter_confirm_name
+  - intent: help_with
+  - action: action_save_consulta
+  - action: action_provide_help
+  - action: utter_need_assistance
+  - intent: affirm
+  - action: action_more_help
+  
+- story: no_more_help
+  steps:
+  - action: utter_need_assistance
+  - intent: deny
+  - action: utter_goodbye
+

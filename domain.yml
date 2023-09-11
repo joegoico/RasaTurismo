@@ -1,22 +1,24 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - say_name
-  - help_with
-  - bot_challenge
-  - hospedaje
-  - hospedaje_change
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- help_with
+- hospedaje
+- hospedaje_change
+- say_name
 entities:
-  - nombre
-  - consulta
-  - det
-  - fot
-
+- consulta
+- nombre
+- det
+- fot
+- cambio
 slots:
+  change:
+    type: bool
+    initial_value: false
   name:
     type: text
     mappings:
@@ -26,15 +28,15 @@ slots:
   doubt:
     type: categorical
     values:
-      - hospedaje
-      - destino
-      - traslado
-      - precio
-      - paquete
-      - fecha
-      - sorpresas
-      - reserva
-      - compra
+    - hospedaje
+    - destino
+    - traslado
+    - precio
+    - paquete
+    - fecha
+    - sorpresas
+    - reserva
+    - compra
     influence_conversation: true
     mappings:
     - type: from_entity
@@ -59,84 +61,64 @@ slots:
     influence_conversation: true
     initial_value: false
     mappings:
-      - type: from_intent
-        intent: affirm
-        value: true
-      - type: from_intent
-        intent: deny
-        value: false
-
-
+    - type: from_intent
+      intent: affirm
+      value: true
+    - type: from_intent
+      intent: deny
+      value: false
 actions:
-  - action_save_name
-  - action_save_consulta
-  - action_more_info
-  - action_send_link
-  - action_show_photo
-  - action_provide_help
-
+- action_save_name
+- action_provide_help
+- action_save_consulta
+- action_more_info
+- action_send_link
+- action_show_photo
+- action_more_help
 responses:
   utter_greet:
-  - text: "Hola! Como es tu nombre?"
-  - text: "Hola, estoy acá para ayudarte!. ¿me podrias decir tu nombre?"
-
+  - text: Hola! Como es tu nombre?
+  - text: Hola, estoy acá para ayudarte!. ¿me podrias decir tu nombre?
   utter_confirm_name:
-    - text: "¡Gracias, {name}!. Contame, ¿en que puedo ayudarte?"
-    - text: "Ok {name}, decime con que necesitas ayuda (hospedaje, destino, la fecha, etc)"
-
-  utter_help_with:
-    - text: "Perfecto {name}, contame cual es tu duda acerca de {doubt}"
-    - text: "Bien {name}, me dijiste que necesitas ayuda con {doubt}. Contame con mas detalle que necesitas."
-
+  - text: ¡Gracias, {name}!. Contame, ¿en que puedo ayudarte?
+  - text: Ok {name}, decime con que necesitas ayuda (hospedaje, destino, la fecha, etc)
   utter_need_assistance:
-    - text: "¿Necesitas ayuda con algo mas?"
-    - text: "¿Te puedo ayudar con algo mas?"
-    - text: "¿Necesitas informacion acerca de algun otro tema?"
-  
+  - text: ¿Necesitas ayuda con algo mas?
+  - text: ¿Te puedo ayudar con algo mas?
+  - text: ¿Necesitas informacion acerca de algun otro tema?
   utter_hospedaje:
-    - text: "Dale, aca te dejo mas informacion acerca de tu lugar de hospedaje"
-    - text: "Acá tenes un poco mas de informacion sobre tu hospedaje"
-
+  - text: Bien, me dijiste que necesitas ayuda con el hospedaje. ¿Queres mas informacion del hospedaje o queres cambiarlo?
+  - text: Acerca del hospedaje, ¿te interesa saber mas o queres cambiar tu hospedaje?
   utter_hospedaje_change:
-    - text: "Bueno, vamos a ver que podemos hacer. Podés darme mas detalles del motivo del cambio?"
-    - text: "Dale, veamos que podemos conseguir. Para hacer un buen cambio me gustaría que me des mas detalles acerca del motivo por el cual queres cambiar el hospedaje"
-  
+  - text: Bueno, vamos a ver que podemos hacer. Podés darme mas detalles del motivo del cambio?
+  - text: Dale, veamos que podemos conseguir. Para hacer un buen cambio me gustaría que me des mas detalles acerca del motivo por el cual queres cambiar el hospedaje
   utter_destino:
-    - text: "Te dejo el link de la pagina oficial de tu destino para que puedas ver todo lo que necesites https://tandil.tur.ar"
-    - text: "Dale, te paso el link del sitio oficial de tu destino para que veas en detalle que ofrece: https://tandil.tur.ar"
-
+  - text: Te dejo el link de la pagina oficial de tu destino para que puedas ver todo lo que necesites https://tandil.tur.ar
+  - text: 'Dale, te paso el link del sitio oficial de tu destino para que veas en detalle que ofrece: https://tandil.tur.ar'
   utter_traslado:
-    - text: "el traslado que te reservamos es mediante colectivo, la empresa es el rapido. ¿estas conforme con esta elección?"
-    - text: "el traslado que te reservamos es mediante avión, la empresa es Aerolineas Argentina. ¿estas conforme con esta elección?"
-  
+  - text: el traslado que te reservamos es mediante colectivo, la empresa es el rapido. ¿estas conforme con esta elección?
+  - text: el traslado que te reservamos es mediante avión, la empresa es Aerolineas Argentina. ¿estas conforme con esta elección?
   utter_precio:
-    - text: "te paso en detalle como se compone el precio final:"
-    - text: "el precio final de tu paquete esta compuesto de la siguiente manera:"
-
+  - text: 'te paso en detalle como se compone el precio final:'
+  - text: 'el precio final de tu paquete esta compuesto de la siguiente manera:'
   utter_sorpresas:
-    - text: "Dale, te cuento un poco acerca de las sorpresas. /n Las sorpresas"
-
+  - text: Dale, te cuento un poco acerca de las sorpresas. /n Las sorpresas
   utter_fecha:
-    - text: "salis mañana 20:00hs"
-
+  - text: salis mañana 20:00hs
   utter_reserva:
-    - text: "Estos son los detalles de tu reserva:"
-  
+  - text: 'Estos son los detalles de tu reserva:'
   utter_did_that_help:
-  - text: "Te sirvió mi respuesta?"
-
+  - text: Te sirvió mi respuesta?
   utter_goodbye:
-  - text: "chau {name}, gracias por tu visita!"
-
+  - text: chau {name}, gracias por tu visita!
   utter_iamabot:
-  - text: "soy un agente virtual cuya misión es asesorarte en tu viaje."
-
+  - text: soy un agente virtual cuya misión es asesorarte en tu viaje.
   utter_need_photo:
-  - text: "ok, te dejo fotos del hospedaje"
-  
+  - text: ok, te dejo fotos del hospedaje
+  utter_more_help:
+    - text: "contame en que mas te puedo ayudar"
   utter_more_info:
-  - text: "Mulen Hotel es un nuevo establecimiento 4* de la Ciudad de Tandil. Dispone de 60 exclusivas habitaciones, un área abierta de C o-Work, Restaurant y una agenda de eventos durante todo el año. Amplios y elegantes espacios, para relajarse, trabajar, ejercitarse y disfrutar de buena gastronomía. Amigable con el medio ambiente, fue concebido con estilo contemporáneo y natural, donde los materiales sustentables se integran con modernas tecnologías y los niveles más altos de confort. Mulen esta cerca del centro comercial, cafés, bares y lugares de negocio de la ciudad. A pasos del área histórica de Tandil, donde se destacan la Parroquia, el Palacio Municipal y los principales museos. Los viajeros pueden disfrutar también de espacios verdes, paseos por las sierras, comidas regionales o actividades de aventura en el marco serrano. Vení a Mulen por tus vacaciones, por tus proyectos, por tus planes y sueños. Vení para estar bien en Tandil. Vení para estar bien en Mulen."
-
+  - text: Mulen Hotel es un nuevo establecimiento 4* de la Ciudad de Tandil. Dispone de 60 exclusivas habitaciones, un área abierta de C o-Work, Restaurant y una agenda de eventos durante todo el año. Amplios y elegantes espacios, para relajarse, trabajar, ejercitarse y disfrutar de buena gastronomía. Amigable con el medio ambiente, fue concebido con estilo contemporáneo y natural, donde los materiales sustentables se integran con modernas tecnologías y los niveles más altos de confort. Mulen esta cerca del centro comercial, cafés, bares y lugares de negocio de la ciudad. A pasos del área histórica de Tandil, donde se destacan la Parroquia, el Palacio Municipal y los principales museos. Los viajeros pueden disfrutar también de espacios verdes, paseos por las sierras, comidas regionales o actividades de aventura en el marco serrano. Vení a Mulen por tus vacaciones, por tus proyectos, por tus planes y sueños. Vení para estar bien en Tandil. Vení para estar bien en Mulen.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-consulta",
+      "2": "I-consulta",
+      "3": "L-consulta",
+      "4": "U-consulta",
+      "5": "B-det",
+      "6": "I-det",
+      "7": "L-det",
+      "8": "U-det",
+      "9": "B-fot",
+      "10": "I-fot",
+      "11": "L-fot",
+      "12": "U-fot",
+      "13": "B-nombre",
+      "14": "I-nombre",
+      "15": "L-nombre",
+      "16": "U-nombre",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-consulta": 1,
+      "I-consulta": 2,
+      "L-consulta": 3,
+      "U-consulta": 4,
+      "B-det": 5,
+      "I-det": 6,
+      "L-det": 7,
+      "U-det": 8,
+      "B-fot": 9,
+      "I-fot": 10,
+      "L-fot": 11,
+      "U-fot": 12,
+      "B-nombre": 13,
+      "I-nombre": 14,
+      "L-nombre": 15,
+      "U-nombre": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

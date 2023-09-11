@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -13,12 +12,95 @@ nlu:
     - Necesito ayuda
     - Tengo una pregunta
     - Tengo una duda
-
 - intent: say_name
   examples: |
     - me llamo [juan](nombre)
     - soy [ana](nombre)
     - [jose](nombre)
+    - [valentin](nombre)
+- intent: goodbye
+  examples: |
+    - Genial
+    - Genial, gracias
+    - Gracias
+    - Muchas gracias
+    - nos vemos
+    - gracaias
+    - muchas gracias
+    - te agradezco
+    - hasta luego
+    - chau
+    - le agradezco
+- intent: affirm
+  examples: |
+    - Si
+    - Claro
+    - Así es
+    - Exactamente
+    - Es correcto
+    - Esta bien
+    - ok
+    - dale
+    - me gustaria
+    - por favor
+    - plis
+    - please
+    - si
+- intent: deny
+  examples: |
+    - no
+    - Está mal
+    - Es incorrecto
+    - No me convence
+    - No lo creo
+    - Lo dudo
+- intent: help_with
+  examples: |
+    - Necesito ayuda con el [destino](consulta)
+    - el [destino](consulta)
+    - el [hospedaje](consulta)
+    - el [traslado](consulta)
+    - el [precio](consulta)
+    - el [paquete](consulta)
+    - la [fecha](consulta)
+    - Necesito ayuda con el [hospedaje](consulta)
+    - Necesito ayuda con el [traslado](consulta)
+    - Necesito ayuda con el [precio](consulta)
+    - Necesito ayuda con el [paquete](consulta)
+    - Necesito ayuda con la [fecha](consulta)
+    - Necesito ayuda con las [sorpresas](consulta)
+    - Necesito ayuda con la [reserva](consulta)
+    - Quiero cancelar mi [compra](consulta)
+    - Quiero cancelar mi [reserva](consulta)
+    - [sorpresas](consulta)
+- intent: hospedaje
+  examples: |
+    - mas [detalles](det)
+    - quiero mas [detalles](det)
+    - quiero mas [detalles](det) de mi hospedaje
+    - quiero mas [detalles](det) del hotel
+    - quiero saber mas sobre(det) mi hospedaje
+    - como es el hotel?
+    - quiero ver [fotos](fot) del hospedaje
+    - dame mas [info](det)
+    - quiero mas [info](det)
+    - quiero mas [informacion](det)
+- intent: hospedaje_change
+  examples: |
+    - quiero [cambiar](cambio) mi hospedaje
+    - quiero ir a [otro](cambio) hotel
+    - no me gusta mi hospedaje
+    - me gustaria [cambiar](cambio) mi hospedaje
+    - [no quiero ir](cambio) al hotel que me asignaron
+    - [quiero otro](cambio) hotel
+    - quiero otro hospedaje
+- intent: bot_challenge
+  examples: |
+    - Sos un robot?
+    - Sos un humano?
+    - Con quien estoy hablando?
+    - Que sos?
+    - Quien sos?
 - lookup: nombre
   examples: |
     - Juan
@@ -119,60 +201,6 @@ nlu:
     - María Pilar
     - María Isabel
     - María Rosa
-
-
-- intent: goodbye
-  examples: |
-    - Genial
-    - Genial, gracias
-    - Gracias
-    - Muchas gracias
-
-- intent: affirm
-  examples: |
-    - Si
-    - Claro
-    - Así es
-    - Exactamente
-    - Es correcto
-    - Esta bien
-    - ok
-    - dale
-    - me gustaria
-    - por favor
-    - plis
-    - please
-    
-
-- intent: deny
-  examples: |
-    - no
-    - Está mal
-    - Es incorrecto
-    - No me convence
-    - No lo creo
-    - Lo dudo
-
-- intent: help_with
-  examples: |
-    - Necesito ayuda con el [destino](consulta)
-    - el [destino](consulta)
-    - el [hospedaje](consulta)
-    - el [traslado](consulta)
-    - el [precio](consulta)
-    - el [paquete](consulta)
-    - la [fecha](consulta)
-    - Necesito ayuda con el [hospedaje](consulta)
-    - Necesito ayuda con el [traslado](consulta)
-    - Necesito ayuda con el [precio](consulta)
-    - Necesito ayuda con el [paquete](consulta)
-    - Necesito ayuda con la [fecha](consulta)
-    - Necesito ayuda con las [sorpresas](consulta)
-    - Necesito ayuda con la [reserva](consulta)
-    - Quiero cancelar mi [compra](consulta)
-    - Quiero cancelar mi [reserva](consulta)
-    - [sorpresas](consulta)
-  
 - lookup: consulta
   examples: |
     - hospedaje
@@ -184,45 +212,3 @@ nlu:
     - sorpresas
     - reserva
     - compra
-
-- intent: hospedaje
-  examples: |
-    - mas [detalles](det)
-    - quiero mas [detalles](det)
-    - quiero mas [detalles](det) de mi hospedaje
-    - quiero mas [detalles](det) del hotel
-    - quiero saber mas sobre(det) mi hospedaje
-    - como es el hotel?
-    - quiero ver [fotos](fot) del hospedaje
-    - dame mas [info](det)
-    - quiero mas [info](det)
-    - quiero mas [informacion](det)
-
-- intent: hospedaje_change
-  examples: |
-    - quiero cambiar mi hospedaje
-    - quiero ir a otro hotel
-    - no me gusta mi hospedaje
-    - me gustaria cambiar mi hospedaje
-    - no quiero ir al hotel que me asignaron
-    - quiero otro hotel
-    - quiero otro hospedaje
-                          
-
-- intent: goodbye
-  examples: |
-    - nos vemos
-    - gracaias
-    - muchas gracias
-    - te agradezco
-    - hasta luego
-    - chau
-    - le agradezco
-  
-- intent: bot_challenge
-  examples: |
-    - Sos un robot?
-    - Sos un humano?
-    - Con quien estoy hablando?
-    - Que sos?
-    - Quien sos?

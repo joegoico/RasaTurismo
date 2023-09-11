@@ -119,7 +119,21 @@ class ActionProvideInfo(Action):
             dispatcher.utter_message(text="No estoy seguro de cómo puedo ayudarte en este momento.")
 
         return []
+class ActionMoreHelp(Action):
 
+    def name(self) -> Text:
+        return "action_more_help"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        preg = tracker.get_slot("preguntar_mas_informacion")
+
+        while preg:
+            dispatcher.utter_template("utter_more_help")
+            ActionListen(Action)
+            ActionSaveConsulta(Action)
+            
+        return[]   
 class ActionSendLink(Action):
 
     def name(self) -> Text:
