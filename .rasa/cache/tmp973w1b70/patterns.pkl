@@ -1,0 +1,6 @@
+[
+  {
+    "name": "nombre",
+    "pattern": "(Juan|Pedro|Carlos|Antonio|Luis|José|Manuel|Francisco|David|José\\ Luis|Javier|Daniel|Miguel|Rafael|Juan\\ Carlos|José\\ Manuel|Fernando|Pablo|Sergio|Jorge|Ángel|Alberto|Alejandro|Ramón|Raúl|Tomás|Diego|Guillermo|Andrés|Simón|Lucas|Roberto|Emilio|Gabriel|Mario|Adolfo|Victor|Joaquín|Felipe|Benjamín|César|Eduardo|Julio|Esteban|Hugo|Israel|María|Ana|Laura|Carmen|Patricia|Isabel|Susana|Elena|Rosa|Claudia|Mercedes|Silvia|Marta|Andrea|Paula|Raquel|Natalia|Lidia|Sonia|Sara|Lourdes|Gabriela|Aurora|Adriana|Sofía|Beatriz|Lucía|Carla|Lorena|Gloria|Cecilia|Ángela|Esther|Belén|Olga|Alicia|Emma|Victoria|Teresa|Dolores|Elena\\ María|Isabel\\ María|María\\ José|María\\ Carmen|María\\ Luisa|María\\ Dolores|María\\ Teresa|María\\ Pilar|María\\ Isabel|María\\ Rosa)"
+  }
+]

@@ -2,32 +2,114 @@ version: "3.1"
 
 stories:
 
-- story: knowing_user
+- story: help_choosing_hospedaje
   steps:
   - intent: greet
   - action: utter_greet
   - intent: say_name
-  - action: action_save_name
-  - action: utter_confirm_name 
-
-- story: change_hospedaje
-  steps:
-  - intent: hospedaje_change
-  - action: utter_hospedaje_change
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: say_name
-  - action: action_save_name
   - action: utter_confirm_name
   - intent: help_with
-  - action: action_save_consulta
-  - action: action_provide_help
+  - slot_was_set:
+    - doubt: hospedaje
+  - action: utter_hospedaje
+  - slot_was_set:
+    - preguntar_mas_informacion: true
+  - action: utter_prueba
+  - slot_was_set:
+    - preguntar_mas_informacion: false
   - action: utter_need_assistance
-  - intent: affirm
-  - action: action_more_help
+
+- story: help_choosing_destino
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: utter_confirm_name
+  - intent: help_with
+  - slot_was_set:
+    - doubt: destino
+  - action: utter_destino
+  - slot_was_set:
+    - preguntar_mas_informacion: true
+  - action: utter_prueba
+  - slot_was_set:
+    - preguntar_mas_informacion: false
+  - action: utter_need_assistance
+
+- story: help_choosing_traslado
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: utter_confirm_name
+  - intent: help_with
+  - slot_was_set:
+    - doubt: traslado
+  - action: utter_traslado
+  - slot_was_set:
+    - preguntar_mas_informacion: true
+  - action: utter_prueba
+  - slot_was_set:
+    - preguntar_mas_informacion: false
+  - action: utter_need_assistance
+
+- story: help_choosing_fecha
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: utter_confirm_name
+  - intent: help_with
+  - slot_was_set:
+    - doubt: fecha
+  - action: utter_fecha
+  - slot_was_set:
+    - preguntar_mas_informacion: true
+  - action: utter_prueba
+  - slot_was_set:
+    - preguntar_mas_informacion: false
+  - action: utter_need_assistance
+
+- story: help_with_sorpresas
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: utter_confirm_name
+  - intent: help_with
+  - slot_was_set:
+    - doubt: sorpresas
+  - action: utter_sorpresas
+  - slot_was_set:
+    - preguntar_mas_informacion: true
+  - action: utter_prueba
+  - slot_was_set:
+    - preguntar_mas_informacion: false
+  - action: utter_need_assistance
+
+- story: help_with_reserva
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+  - action: utter_confirm_name
+  - intent: help_with
+  - or:
+    - slot_was_set:
+      - doubt: compra
+    - slot_was_set:
+      - doubt: reserva
+    - slot_was_set:
+      - doubt: paquete
+  - action: utter_precio
+  - slot_was_set:
+    - preguntar_mas_informacion: true
+  - action: utter_prueba
+  - slot_was_set:
+    - preguntar_mas_informacion: false
+  - action: utter_need_assistance
+
+
   
 - story: no_more_help
   steps:
@@ -35,3 +117,26 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: say_name
+    entities:
+    - nombre: jose
+  - slot_was_set:
+    - name: jose
+  - action: utter_confirm_name
+  - intent: help_with
+    entities:
+    - consulta: hospedaje
+  - slot_was_set:
+    - doubt: hospedaje
+  - action: utter_hospedaje
+  - intent: deny
+  - slot_was_set:
+    - preguntar_mas_informacion: false
+  - action: utter_need_assistance
+  - intent: goodbye
+  - action: utter_goodbye

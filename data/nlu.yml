@@ -18,6 +18,7 @@ nlu:
     - soy [ana](nombre)
     - [jose](nombre)
     - [valentin](nombre)
+    - [jose](nombre)
 - intent: goodbye
   examples: |
     - Genial
@@ -56,6 +57,12 @@ nlu:
     - Lo dudo
 - intent: help_with
   examples: |
+    - [destino](consulta)
+    - [hospedaje](consulta)
+    - [traslado](consulta)
+    - [precio](consulta)
+    - [paquete](consulta)
+    - [fecha](consulta)
     - Necesito ayuda con el [destino](consulta)
     - el [destino](consulta)
     - el [hospedaje](consulta)
@@ -73,6 +80,7 @@ nlu:
     - Quiero cancelar mi [compra](consulta)
     - Quiero cancelar mi [reserva](consulta)
     - [sorpresas](consulta)
+    - necesito ayuda con el [hospedaje](consulta)
 - intent: hospedaje
   examples: |
     - mas [detalles](det)
@@ -87,13 +95,17 @@ nlu:
     - quiero mas [informacion](det)
 - intent: hospedaje_change
   examples: |
-    - quiero [cambiar](cambio) mi hospedaje
-    - quiero ir a [otro](cambio) hotel
-    - no me gusta mi hospedaje
-    - me gustaria [cambiar](cambio) mi hospedaje
-    - [no quiero ir](cambio) al hotel que me asignaron
-    - [quiero otro](cambio) hotel
-    - quiero otro hospedaje
+    - quiero [cambiar]{"entity": "cambio", "value": "change"} mi hospedaje
+    - quiero ir a [otro hotel]{"entity": "cambio", "value": "change"}
+    - [no me gusta mi hospedaje]{"entity": "cambio", "value": "change"}
+    - me gustaria [cambiar mi hospedaje]{"entity": "cambio", "value": "change"}
+    - [no quiero ir al hotel]{"entity": "cambio", "value": "change"} que me asignaron
+    - [quiero otro hotel]{"entity": "cambio", "value": "change"}
+    - [quiero otro hospedaje]{"entity": "cambio", "value": "change"}
+
+- intent: destino_choose
+  examples: |
+    - 
 - intent: bot_challenge
   examples: |
     - Sos un robot?
@@ -101,6 +113,15 @@ nlu:
     - Con quien estoy hablando?
     - Que sos?
     - Quien sos?
+- synonym: change
+  examples: |
+    - cambiar
+    - otro hotel
+    - no me gusta mi hospedaje
+    - cambiar mi hospedaje
+    - no quiero ir al hotel
+    - quiero otro hotel
+    - quiero otro hospedaje
 - lookup: nombre
   examples: |
     - Juan
@@ -149,8 +170,6 @@ nlu:
     - Esteban
     - Hugo
     - Israel
-    - Martin
-    - martina
     - María
     - Ana
     - Laura
@@ -201,14 +220,3 @@ nlu:
     - María Pilar
     - María Isabel
     - María Rosa
-- lookup: consulta
-  examples: |
-    - hospedaje
-    - destino
-    - traslado
-    - precio
-    - paquete
-    - fecha
-    - sorpresas
-    - reserva
-    - compra

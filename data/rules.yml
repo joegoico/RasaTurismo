@@ -5,7 +5,6 @@ rules:
 - rule:  ask for name everytime user says hi
   steps:
   - intent: say_name
-  - action: action_save_name
   - action: utter_confirm_name
 
 - rule: Say goodbye anytime the user says goodbye
