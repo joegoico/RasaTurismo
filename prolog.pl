@@ -20,10 +20,10 @@ destino(17,urbano, "Rosario", "Rosario es una ciudad a orillas del río Paraná 
 destino(18, urbano, "Cordoba Capital", "Córdoba Capital es la ciudad más grande de la provincia de Córdoba. Ofrece historia, universidades y una gran vida nocturna, así como hermosos paisajes serranos cercanos.", "Enlace: https://turismo.cordoba.gob.ar/").
 
 
-traslado(av01, "Aerolineas Argentinas","Enlace: www.aerolineas.com.ar, Teléfono: 0810-222-86527").
-traslado(av02, "Jet Smart","Enlace: www.jetsmart.com, Teléfono: 11-2206-7799").
-traslado(av04, "Flybondi","Enlace: www.flybondi.com, Teléfono: 351-284-3320").
-traslado(av05, "Lade","Enlace:www.lade.com.ar, Teléfono:0810-810-5233").
+traslado(av01, "Aerolineas Argentinas","www.aerolineas.com.ar, Teléfono: 0810-222-86527").
+traslado(av02, "Jet Smart","www.jetsmart.com, Teléfono: 11-2206-7799").
+traslado(av03, "Flybondi","www.flybondi.com, Teléfono: 351-284-3320").
+traslado(av04, "Lade","www.lade.com.ar, Teléfono:0810-810-5233").
 
 hotel(1, 'Hotel Plaza', 4, 2, 'Centro', 150).
 hotel(2, 'Hotel Estrella', 3, 3, 'Playa', 120).
@@ -56,19 +56,23 @@ consultar_hoteles(Codigo, Nombre, Estrellas, Camas, Ubicacion, Precio):-
     write('Precio por noche en dolares: $'),write(Precio), nl,nl,
     fail.
 
-
 consultar_destinos(Codigo, Tipo, Nombre, Descripcion, Enlace) :-
-     destino(Codigo, Tipo, Nombre, Descripcion, Enlace),
+     destino(Codigo, Tipo, Nombre, Descripcion, Enlace).
+
+consultar_destinos(Codigo, Tipo, Nombre) :-
+     destino(Codigo, Tipo, Nombre, _, _),
     write('Nombre: '), write(Nombre), nl,
-    write('Codigo de la ciudad: '), write(Codigo),nl,nl,
-    fail.
+    write('Tipo: '), write(Tipo), nl,
+    write('Codigo de la ciudad: '), write(Codigo),nl,nl.
+    
+consultar_traslados(Codigo, Nombre, Enlace):- 
+    traslado(Codigo, Nombre, Enlace).
 
 consultar_traslados(Codigo, Nombre, Enlace):- 
     traslado(Codigo, Nombre, Enlace),
     write('Codigo Aerolinea: '), write(Codigo),nl,
     write('Nombre de la Aerolinea: '), write(Nombre),nl,
-    write('Enlace a la pagina de la aerolinea: '), write(Enlace),nl,nl,
-    fail.
+    write('Enlace a la pagina de la aerolinea: '), write(Enlace),nl.
 
 
 

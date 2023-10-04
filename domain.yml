@@ -9,7 +9,8 @@ intents:
 - hospedaje
 - hospedaje_change
 - say_name
-- destino_choose
+actions:
+- action_traslados
 entities:
 - consulta
 - nombre
@@ -78,6 +79,8 @@ responses:
   - text: bien, me dijiste que queres que te ayude a elejir tu {doubt}, ¿es correcto?
   utter_traslado:
   - text: bien, me dijiste que queres que te ayude a elejir tu {doubt}, ¿es correcto?
+  utter_traslado_disponibles:
+  - text: por el momento solo contamos con los siguientes medios de traslado. Si te interesa alguno, proporcioname el codigo asi ya podemos trabajar sobre el
   utter_precio:
   - text: ok, te muestro en detalle como se compone el precio final y luego me decis si necesitas ayuda con algo
   utter_fecha:
@@ -90,14 +93,6 @@ responses:
   - text: chau broston
   utter_iamabot:
   - text: Soy un agente conversacional cuya misión es guiarte en tus nuevo viaje
-  utter_prueba:
-  - text: funca joya pa
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-actions:
-- utter_goodbye
-- utter_confirm_name
-- utter_greet
-- utter_hospedaje
-- utter_need_assistance
